@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37C34E601AE86475004C1C20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C34E5F1AE86475004C1C20 /* AppDelegate.swift */; };
+		37C34E621AE86475004C1C20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C34E611AE86475004C1C20 /* ViewController.swift */; };
+		37C34E651AE86475004C1C20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37C34E631AE86475004C1C20 /* Main.storyboard */; };
+		37C34E671AE86475004C1C20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37C34E661AE86475004C1C20 /* Images.xcassets */; };
+		37C34E6A1AE86475004C1C20 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C34E681AE86475004C1C20 /* LaunchScreen.xib */; };
+		37C34E761AE86475004C1C20 /* GabbyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C34E751AE86475004C1C20 /* GabbyTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		37C34E701AE86475004C1C20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37C34E521AE86475004C1C20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37C34E591AE86475004C1C20;
+			remoteInfo = Gabby;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		37C34E5A1AE86475004C1C20 /* Gabby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gabby.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37C34E5E1AE86475004C1C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37C34E5F1AE86475004C1C20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		37C34E611AE86475004C1C20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		37C34E641AE86475004C1C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		37C34E661AE86475004C1C20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		37C34E691AE86475004C1C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		37C34E6F1AE86475004C1C20 /* GabbyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GabbyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		37C34E741AE86475004C1C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37C34E751AE86475004C1C20 /* GabbyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GabbyTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37C34E571AE86475004C1C20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37C34E6C1AE86475004C1C20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		37C34E511AE86475004C1C20 = {
+			isa = PBXGroup;
+			children = (
+				37C34E5C1AE86475004C1C20 /* Gabby */,
+				37C34E721AE86475004C1C20 /* GabbyTests */,
+				37C34E5B1AE86475004C1C20 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		37C34E5B1AE86475004C1C20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37C34E5A1AE86475004C1C20 /* Gabby.app */,
+				37C34E6F1AE86475004C1C20 /* GabbyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37C34E5C1AE86475004C1C20 /* Gabby */ = {
+			isa = PBXGroup;
+			children = (
+				37C34E5F1AE86475004C1C20 /* AppDelegate.swift */,
+				37C34E611AE86475004C1C20 /* ViewController.swift */,
+				37C34E631AE86475004C1C20 /* Main.storyboard */,
+				37C34E661AE86475004C1C20 /* Images.xcassets */,
+				37C34E681AE86475004C1C20 /* LaunchScreen.xib */,
+				37C34E5D1AE86475004C1C20 /* Supporting Files */,
+			);
+			path = Gabby;
+			sourceTree = "<group>";
+		};
+		37C34E5D1AE86475004C1C20 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				37C34E5E1AE86475004C1C20 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		37C34E721AE86475004C1C20 /* GabbyTests */ = {
+			isa = PBXGroup;
+			children = (
+				37C34E751AE86475004C1C20 /* GabbyTests.swift */,
+				37C34E731AE86475004C1C20 /* Supporting Files */,
+			);
+			path = GabbyTests;
+			sourceTree = "<group>";
+		};
+		37C34E731AE86475004C1C20 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				37C34E741AE86475004C1C20 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		37C34E591AE86475004C1C20 /* Gabby */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37C34E791AE86475004C1C20 /* Build configuration list for PBXNativeTarget "Gabby" */;
+			buildPhases = (
+				37C34E561AE86475004C1C20 /* Sources */,
+				37C34E571AE86475004C1C20 /* Frameworks */,
+				37C34E581AE86475004C1C20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gabby;
+			productName = Gabby;
+			productReference = 37C34E5A1AE86475004C1C20 /* Gabby.app */;
+			productType = "com.apple.product-type.application";
+		};
+		37C34E6E1AE86475004C1C20 /* GabbyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37C34E7C1AE86475004C1C20 /* Build configuration list for PBXNativeTarget "GabbyTests" */;
+			buildPhases = (
+				37C34E6B1AE86475004C1C20 /* Sources */,
+				37C34E6C1AE86475004C1C20 /* Frameworks */,
+				37C34E6D1AE86475004C1C20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37C34E711AE86475004C1C20 /* PBXTargetDependency */,
+			);
+			name = GabbyTests;
+			productName = GabbyTests;
+			productReference = 37C34E6F1AE86475004C1C20 /* GabbyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		37C34E521AE86475004C1C20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Pragmatic Labs, LLC";
+				TargetAttributes = {
+					37C34E591AE86475004C1C20 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					37C34E6E1AE86475004C1C20 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 37C34E591AE86475004C1C20;
+					};
+				};
+			};
+			buildConfigurationList = 37C34E551AE86475004C1C20 /* Build configuration list for PBXProject "Gabby" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 37C34E511AE86475004C1C20;
+			productRefGroup = 37C34E5B1AE86475004C1C20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				37C34E591AE86475004C1C20 /* Gabby */,
+				37C34E6E1AE86475004C1C20 /* GabbyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		37C34E581AE86475004C1C20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37C34E651AE86475004C1C20 /* Main.storyboard in Resources */,
+				37C34E6A1AE86475004C1C20 /* LaunchScreen.xib in Resources */,
+				37C34E671AE86475004C1C20 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37C34E6D1AE86475004C1C20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37C34E561AE86475004C1C20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37C34E621AE86475004C1C20 /* ViewController.swift in Sources */,
+				37C34E601AE86475004C1C20 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37C34E6B1AE86475004C1C20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37C34E761AE86475004C1C20 /* GabbyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		37C34E711AE86475004C1C20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37C34E591AE86475004C1C20 /* Gabby */;
+			targetProxy = 37C34E701AE86475004C1C20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		37C34E631AE86475004C1C20 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37C34E641AE86475004C1C20 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		37C34E681AE86475004C1C20 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37C34E691AE86475004C1C20 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		37C34E771AE86475004C1C20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		37C34E781AE86475004C1C20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		37C34E7A1AE86475004C1C20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Gabby/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		37C34E7B1AE86475004C1C20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Gabby/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		37C34E7D1AE86475004C1C20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GabbyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gabby.app/Gabby";
+			};
+			name = Debug;
+		};
+		37C34E7E1AE86475004C1C20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GabbyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gabby.app/Gabby";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37C34E551AE86475004C1C20 /* Build configuration list for PBXProject "Gabby" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37C34E771AE86475004C1C20 /* Debug */,
+				37C34E781AE86475004C1C20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37C34E791AE86475004C1C20 /* Build configuration list for PBXNativeTarget "Gabby" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37C34E7A1AE86475004C1C20 /* Debug */,
+				37C34E7B1AE86475004C1C20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		37C34E7C1AE86475004C1C20 /* Build configuration list for PBXNativeTarget "GabbyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37C34E7D1AE86475004C1C20 /* Debug */,
+				37C34E7E1AE86475004C1C20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 37C34E521AE86475004C1C20 /* Project object */;
+}
