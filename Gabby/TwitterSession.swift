@@ -8,8 +8,20 @@
 
 import UIKit
 
-class TwitterSession: NSObject {
+class TwitterSession: NSObject, UITabBarControllerDelegate {
     
     @IBOutlet weak var tabBarController: UITabBarController!
+    var checkAuthenticationTimer: NSTimer!
+    var twitterAccessToken: NSString!
     
+    override func awakeFromNib() {
+        checkAuthenticationTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "showAuthentication", userInfo: nil, repeats: true)
+    }
+    
+    func showAuthentication() {
+        if self.tabBarController.isViewLoaded() && self.tabBarController.presentedViewController == nil {
+            self.tabBarController.performSegueWithIdentifier("SignInWithTwitterSegue", sender: nil)
+            self.checkAuthenticationTimer.invalidate();
+        }
+    }
 }

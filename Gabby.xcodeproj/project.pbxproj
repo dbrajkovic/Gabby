@@ -13,6 +13,7 @@
 		37A2F85E1AFAF02E005A4A77 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A2F85C1AFAF00F005A4A77 /* CoreData.framework */; };
 		37A2F8611AFAF516005A4A77 /* GabModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37A2F85F1AFAF516005A4A77 /* GabModel.xcdatamodeld */; };
 		37A2F86A1AFAFE49005A4A77 /* Gab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A2F8691AFAFE49005A4A77 /* Gab.swift */; };
+		37C1709F1B13DF4700793858 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C1709E1B13DF4600793858 /* Security.framework */; };
 		37C34E601AE86475004C1C20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C34E5F1AE86475004C1C20 /* AppDelegate.swift */; };
 		37C34E621AE86475004C1C20 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C34E611AE86475004C1C20 /* MainViewController.swift */; };
 		37C34E651AE86475004C1C20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37C34E631AE86475004C1C20 /* Main.storyboard */; };
@@ -21,6 +22,10 @@
 		37C34E761AE86475004C1C20 /* GabbyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C34E751AE86475004C1C20 /* GabbyTests.swift */; };
 		37F21A8D1B041F8700E80812 /* GabDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F21A8C1B041F8700E80812 /* GabDetailViewController.swift */; };
 		37FF1BE81B13AA9700993FE5 /* TwitterSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FF1BE71B13AA9700993FE5 /* TwitterSession.swift */; };
+		37FF1BEA1B13B46500993FE5 /* SignInWithTwitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FF1BE91B13B46500993FE5 /* SignInWithTwitterViewController.swift */; };
+		37FF1BEC1B13B97400993FE5 /* TwitterOAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FF1BEB1B13B97400993FE5 /* TwitterOAuthManager.swift */; };
+		37FF1BEE1B13D30000993FE5 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FF1BED1B13D30000993FE5 /* CoreFoundation.framework */; };
+		37FF1BF21B13DDFA00993FE5 /* NSString+HMACSHA1.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FF1BF11B13DDFA00993FE5 /* NSString+HMACSHA1.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,7 @@
 		37A2F85C1AFAF00F005A4A77 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		37A2F8601AFAF516005A4A77 /* GabModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GabModel.xcdatamodel; sourceTree = "<group>"; };
 		37A2F8691AFAFE49005A4A77 /* Gab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gab.swift; sourceTree = "<group>"; };
+		37C1709E1B13DF4600793858 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		37C34E5A1AE86475004C1C20 /* Gabby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gabby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C34E5E1AE86475004C1C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37C34E5F1AE86475004C1C20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +58,12 @@
 		37C34E751AE86475004C1C20 /* GabbyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GabbyTests.swift; sourceTree = "<group>"; };
 		37F21A8C1B041F8700E80812 /* GabDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GabDetailViewController.swift; sourceTree = "<group>"; };
 		37FF1BE71B13AA9700993FE5 /* TwitterSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterSession.swift; sourceTree = "<group>"; };
+		37FF1BE91B13B46500993FE5 /* SignInWithTwitterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithTwitterViewController.swift; sourceTree = "<group>"; };
+		37FF1BEB1B13B97400993FE5 /* TwitterOAuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterOAuthManager.swift; sourceTree = "<group>"; };
+		37FF1BED1B13D30000993FE5 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		37FF1BEF1B13DDFA00993FE5 /* Gabby-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gabby-Bridging-Header.h"; sourceTree = "<group>"; };
+		37FF1BF01B13DDFA00993FE5 /* NSString+HMACSHA1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HMACSHA1.h"; sourceTree = "<group>"; };
+		37FF1BF11B13DDFA00993FE5 /* NSString+HMACSHA1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HMACSHA1.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37C1709F1B13DF4700793858 /* Security.framework in Frameworks */,
+				37FF1BEE1B13D30000993FE5 /* CoreFoundation.framework in Frameworks */,
 				37A2F85E1AFAF02E005A4A77 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,6 +90,8 @@
 		37C34E511AE86475004C1C20 = {
 			isa = PBXGroup;
 			children = (
+				37C1709E1B13DF4600793858 /* Security.framework */,
+				37FF1BED1B13D30000993FE5 /* CoreFoundation.framework */,
 				37A2F85C1AFAF00F005A4A77 /* CoreData.framework */,
 				37C34E5C1AE86475004C1C20 /* Gabby */,
 				37C34E721AE86475004C1C20 /* GabbyTests */,
@@ -141,6 +157,11 @@
 			isa = PBXGroup;
 			children = (
 				37FF1BE71B13AA9700993FE5 /* TwitterSession.swift */,
+				37FF1BEB1B13B97400993FE5 /* TwitterOAuthManager.swift */,
+				37FF1BE91B13B46500993FE5 /* SignInWithTwitterViewController.swift */,
+				37FF1BF01B13DDFA00993FE5 /* NSString+HMACSHA1.h */,
+				37FF1BF11B13DDFA00993FE5 /* NSString+HMACSHA1.m */,
+				37FF1BEF1B13DDFA00993FE5 /* Gabby-Bridging-Header.h */,
 			);
 			name = Twitter;
 			sourceTree = "<group>";
@@ -250,10 +271,13 @@
 				37A2F8611AFAF516005A4A77 /* GabModel.xcdatamodeld in Sources */,
 				37A2F86A1AFAFE49005A4A77 /* Gab.swift in Sources */,
 				37A2F85B1AFAEF94005A4A77 /* DataManager.swift in Sources */,
+				37FF1BEC1B13B97400993FE5 /* TwitterOAuthManager.swift in Sources */,
 				37F21A8D1B041F8700E80812 /* GabDetailViewController.swift in Sources */,
 				378677071AF1A24700A905D8 /* PostsTableViewController.swift in Sources */,
 				3724ABEF1AF1BA8900F8073C /* GabTableViewCell.swift in Sources */,
+				37FF1BEA1B13B46500993FE5 /* SignInWithTwitterViewController.swift in Sources */,
 				37C34E601AE86475004C1C20 /* AppDelegate.swift in Sources */,
+				37FF1BF21B13DDFA00993FE5 /* NSString+HMACSHA1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,9 +402,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Gabby/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gabby/Gabby-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -389,9 +416,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Gabby/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gabby/Gabby-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
