@@ -15,13 +15,16 @@ class TwitterSession: NSObject, UITabBarControllerDelegate {
     var twitterAccessToken: NSString!
     
     override func awakeFromNib() {
-        checkAuthenticationTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "showAuthentication", userInfo: nil, repeats: true)
+        checkAuthenticationTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "showAuthenticationIfNeeded", userInfo: nil, repeats: true)
     }
     
-    func showAuthentication() {
-        if self.tabBarController.isViewLoaded() && self.tabBarController.presentedViewController == nil {
-            self.tabBarController.performSegueWithIdentifier("SignInWithTwitterSegue", sender: nil)
+    func showAuthenticationIfNeeded() {
+        if self.tabBarController.isViewLoaded() {
             self.checkAuthenticationTimer.invalidate();
+            let defaults = NSUserDefaults.standardUserDefaults()
+            if defaults.stringForKey("oauthToken") == nil || defaults.stringForKey("oauthTokenSecret") == nil {
+                self.tabBarController.performSegueWithIdentifier("SignInWithTwitterSegue", sender: nil);
+            }
         }
     }
 }

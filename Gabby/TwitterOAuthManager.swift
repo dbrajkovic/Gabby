@@ -74,7 +74,6 @@ class TwitterOAuthManager: NSObject {
     
     func obtainRequestToken() {
         let RequestTokenPath = "/oauth/request_token"
-        let requestURLString = NSString(format: "%@\\%@", Host, RequestTokenPath)
         let requestURL = NSURL(scheme: "https", host: Host, path: RequestTokenPath)
         let request = NSMutableURLRequest(URL: requestURL!)
         let HTTPMethod = "POST"
@@ -150,3 +149,23 @@ class TwitterOAuthManager: NSObject {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

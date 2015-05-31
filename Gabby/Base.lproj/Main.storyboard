@@ -77,8 +77,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PS8-Bd-Kri">
                                 <rect key="frame" x="189" y="262" width="223" height="76"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xc7-tK-abg">
-                                        <rect key="frame" x="72" y="23" width="131" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xc7-tK-abg">
+                                        <rect key="frame" x="72" y="23" width="130" height="30"/>
                                         <state key="normal" title="Sign in with Twitter">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -114,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgr-hc-mty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-404" y="-1035"/>
+            <point key="canvasLocation" x="-168" y="-1045"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="oGP-Dg-E6I">
