@@ -18,38 +18,28 @@ extension String {
     }
 }
 
-class TwitterOAuthManager: NSObject {
+class TwitterOAuthManager {
     
     let Host = "api.twitter.com"
-    
-//     Per https://dev.twitter.com/web/sign-in/implementing
-    
-    func oauthNonce() -> String {
+    let HTTPPostMethod = "POST"
+    let oauthCallbackURL = "gabby://oauth/sign_in_with_twitter".stringByAddingRFC3986PercentEscapesUsingEncoding()
+    let oauthConsumerKey = "gKNWuxbiEvoDbFyMXs38nQ"
+    let oauthSignatureMethod = "HMAC-SHA1"
+    let oauthVersion = "1.0"
+    var oauthNonce: String {
         let UUID = NSUUID().UUIDString
-        return UUID.substringToIndex(advance(UUID.startIndex, 32))
+        return UUID.substringToIndex(advance(UUID.startIndex, 32)).stringByAddingRFC3986PercentEscapesUsingEncoding()
+    }
+    var oauthTimestamp: String {
+        let timeInterval = Int(NSDate().timeIntervalSince1970)
+        return "\(timeInterval)"
     }
     
     func oauthSignature(baseString :String) -> String {
         let signingKey = "m2FlAN8bFwEfmriBC8NknCTp2b7Gr4NjdW3OurY".stringByAddingRFC3986PercentEscapesUsingEncoding() + "&"
-        
         return baseString.signatureUsingHmacSHA1WithKey(signingKey)
     }
     
-    func oauthSignatureMethod() -> String {
-        return "HMAC-SHA1"
-    }
-    
-    func  oauthTimestamp() -> String {
-        
-        let timeInterval = Int(NSDate().timeIntervalSince1970)
-        
-        return "\(timeInterval)"
-    }
-    
-    func oauthVersion() -> String {
-        return "1.0";
-    }
-
     func baseString(HTTPMethod: String, URL: NSURL, parameterString: String) -> String {
         let encodedURLString = URL.absoluteString!.stringByAddingRFC3986PercentEscapesUsingEncoding()
         let encodedParameterString = parameterString.stringByAddingRFC3986PercentEscapesUsingEncoding()
@@ -58,9 +48,7 @@ class TwitterOAuthManager: NSObject {
     
     func dictionaryFromParameterString(parameterString: String) -> Dictionary <String, String> {
         let parameters = parameterString.componentsSeparatedByString("&")
-        
         let dictionary = NSMutableDictionary()
-        
         for parameter in parameters {
             let keyValue = parameter.componentsSeparatedByString("=")
             if keyValue.count != 2 {
@@ -68,30 +56,54 @@ class TwitterOAuthManager: NSObject {
             }
             dictionary.setObject(keyValue[1], forKey: keyValue[0])
         }
-        
         return dictionary.copy() as! Dictionary<String, String>;
     }
     
-    func obtainRequestToken() {
-        let RequestTokenPath = "/oauth/request_token"
-        let requestURL = NSURL(scheme: "https", host: Host, path: RequestTokenPath)
+    func URLQueryString(dictionary : Dictionary<String, String>) -> String {
+        var queryString = ""
+        var keys = sorted(dictionary.keys.array)
+        for key in keys {
+            queryString += key + "=" + dictionary[key]!
+            if key != keys.last {
+                queryString += "&"
+            }
+        }
+        return queryString
+    }
+    
+    func authorizationString(dictionary: Dictionary<String, String>) -> String {
+        var authString = "OAuth "
+        var keys = sorted(dictionary.keys.array)
+        for key in keys {
+            authString += key + "=\"" + dictionary[key]! + "\""
+            if key != keys.last {
+                authString += ", "
+            }
+        }
+        return authString
+    }
+    
+    func oauthRequest(path: String, oauthToken: String?) -> NSMutableURLRequest {
+        let requestURL = NSURL(scheme: "https", host: Host, path: path)
         let request = NSMutableURLRequest(URL: requestURL!)
-        let HTTPMethod = "POST"
-        let oauthCallbackURL = "gabby://oauth/sign_in_with_twitter".stringByAddingRFC3986PercentEscapesUsingEncoding()
-        let oauthConsumerKey = "gKNWuxbiEvoDbFyMXs38nQ".stringByAddingRFC3986PercentEscapesUsingEncoding()
-        let oauthNonce = self.oauthNonce().stringByAddingRFC3986PercentEscapesUsingEncoding()
-        let oauthSignatureMethod = self.oauthSignatureMethod()
-        let oauthTimeStamp = self.oauthTimestamp()
-        let oauthVersion = self.oauthVersion()
-        let parameterStringFormat = "oauth_callback=%@&oauth_consumer_key=%@&oauth_nonce=%@&oauth_signature_method=%@&oauth_timestamp=%@&oauth_version=%@"
-        let parameterString = String(format: parameterStringFormat, oauthCallbackURL, oauthConsumerKey, oauthNonce, oauthSignatureMethod, oauthTimeStamp, oauthVersion)
-        let baseString = self.baseString(HTTPMethod, URL: requestURL!, parameterString: parameterString)
-        let oauthSignature = self.oauthSignature(baseString).stringByAddingRFC3986PercentEscapesUsingEncoding()
+        request.HTTPMethod = HTTPPostMethod
+        let encodedOauthNonce = self.oauthNonce
+        let encodedOauthTimeStamp = self.oauthTimestamp
+        var parameters = ["oauth_callback" : oauthCallbackURL, "oauth_consumer_key" : oauthConsumerKey, "oauth_nonce" : encodedOauthNonce, "oauth_signature_method" : oauthSignatureMethod, "oauth_timestamp" : encodedOauthTimeStamp] //, "oauth_version" : oauthVersion]
+        if let token = oauthToken {
+            parameters["oauth_token"] = token
+        }
+        parameters["oauth_version"] = oauthVersion
+        let baseString = self.baseString(HTTPPostMethod, URL: requestURL!, parameterString: URLQueryString(parameters))
+        parameters["oauth_signature"] = self.oauthSignature(baseString).stringByAddingRFC3986PercentEscapesUsingEncoding()
+        request.setValue(authorizationString(parameters), forHTTPHeaderField: "Authorization")
+        return request
+    }
+    
+    func obtainRequestToken() {
+        let requestTokenPath = "/oauth/request_token"
+        let request = oauthRequest(requestTokenPath, oauthToken: nil)
         
-        request.HTTPMethod = HTTPMethod
-        let authorizationFormat = "OAuth oauth_callback=\"%@\", oauth_consumer_key=\"%@\", oauth_nonce=\"%@\", oauth_signature=\"%@\", oauth_signature_method=\"%@\", oauth_timestamp=\"%@\", oauth_version=\"%@\""
-        let authorizationString = String(format: authorizationFormat, oauthCallbackURL, oauthConsumerKey, oauthNonce, oauthSignature, oauthSignatureMethod, oauthTimeStamp, oauthVersion)
-        request.setValue(authorizationString, forHTTPHeaderField: "Authorization")
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
             (response: NSURLResponse!, responseData: NSData!, error: NSError!) in
             let responseString = NSString(data: responseData, encoding: NSUTF8StringEncoding) as! String
@@ -115,26 +127,10 @@ class TwitterOAuthManager: NSObject {
         let oauthToken = queryItem.value
         queryItem = queryItems?.last as! NSURLQueryItem
         let oauthVerifier : NSString = "\(queryItem.name)=\(queryItem.value!)"
-        let RequestTokenPath = "/oauth/access_token"
-        let requestURLString = NSString(format: "%@\\%@", Host, RequestTokenPath)
-        let requestURL = NSURL(scheme: "https", host: Host, path: RequestTokenPath)
-        let request = NSMutableURLRequest(URL: requestURL!)
-        let HTTPMethod = "POST"
-        let oauthCallbackURL = "gabby://oauth/sign_in_with_twitter".stringByAddingRFC3986PercentEscapesUsingEncoding()
-        let oauthConsumerKey = "gKNWuxbiEvoDbFyMXs38nQ".stringByAddingRFC3986PercentEscapesUsingEncoding()
-        let oauthNonce = self.oauthNonce().stringByAddingRFC3986PercentEscapesUsingEncoding()
-        let oauthSignatureMethod = self.oauthSignatureMethod()
-        let oauthTimeStamp = self.oauthTimestamp()
-        let oauthVersion = self.oauthVersion()
-        let parameterStringFormat = "oauth_callback=%@&oauth_consumer_key=%@&oauth_nonce=%@&oauth_signature_method=%@&oauth_timestamp=%@&oauth_token=%@&oauth_version=%@"
-        let parameterString = String(format: parameterStringFormat, oauthCallbackURL, oauthConsumerKey, oauthNonce, oauthSignatureMethod, oauthTimeStamp, oauthToken!, oauthVersion)
-        let baseString = self.baseString(HTTPMethod, URL: requestURL!, parameterString: parameterString)
-        let oauthSignature = self.oauthSignature(baseString).stringByAddingRFC3986PercentEscapesUsingEncoding()
+        
+        let accessTokenPath = "/oauth/access_token"
+        let request = oauthRequest(accessTokenPath, oauthToken: oauthToken)
         request.HTTPBody = oauthVerifier.dataUsingEncoding(NSUTF8StringEncoding)
-        request.HTTPMethod = HTTPMethod
-        let authorizationFormat = "OAuth oauth_callback=\"%@\", oauth_consumer_key=\"%@\", oauth_nonce=\"%@\", oauth_signature=\"%@\", oauth_signature_method=\"%@\", oauth_timestamp=\"%@\", oauth_token=\"%@\", oauth_version=\"%@\""
-        let authorizationString = String(format: authorizationFormat, oauthCallbackURL, oauthConsumerKey, oauthNonce, oauthSignature, oauthSignatureMethod, oauthTimeStamp, oauthToken!, oauthVersion)
-        request.setValue(authorizationString, forHTTPHeaderField: "Authorization")
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
             (response: NSURLResponse!, responseData: NSData!, error: NSError!) in
             let responseString = NSString(data: responseData, encoding: NSUTF8StringEncoding) as! String
