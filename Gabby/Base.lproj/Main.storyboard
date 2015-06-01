@@ -24,6 +24,61 @@
             </objects>
             <point key="canvasLocation" x="-434" y="854"/>
         </scene>
+        <!--Root View Controller-->
+        <scene sceneID="8M5-cM-mEy">
+            <objects>
+                <tableViewController id="dRC-EP-9Px" customClass="StatusesTableViewController" customModule="Gabby" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3Ay-Y7-5YZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatusCell" textLabel="mor-Z0-tlu" style="IBUITableViewCellStyleDefault" id="vwX-5k-yPD">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vwX-5k-yPD" id="3va-aP-mZl">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mor-Z0-tlu">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dRC-EP-9Px" id="vAh-SV-43n"/>
+                            <outlet property="delegate" destination="dRC-EP-9Px" id="7PJ-E5-NKu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="guA-Jv-8Kb"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="resource" value="/statuses/home_timeline"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kha-rN-1xO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1215" y="-735"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="7xZ-Od-ciP">
+            <objects>
+                <navigationController id="LeC-jV-6oM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="FeV-54-6eq"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ube-DX-ejT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dRC-EP-9Px" kind="relationship" relationship="rootViewController" id="DRD-lG-mbR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Su-A8-9Ha" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="395" y="-735"/>
+        </scene>
         <!--Me-->
         <scene sceneID="isI-Kx-mhx">
             <objects>
@@ -42,25 +97,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ty4-FH-HHk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="395" y="48"/>
-        </scene>
-        <!--Home-->
-        <scene sceneID="KgF-9v-TkI">
-            <objects>
-                <viewController id="oSX-rB-RQI" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JhK-72-iak"/>
-                        <viewControllerLayoutGuide type="bottom" id="uh5-0f-Sgo"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fkf-SF-hUD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="2jz-h4-1kl"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oGa-3B-b5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="395" y="-614"/>
         </scene>
         <!--Sign In With Twitter View Controller-->
         <scene sceneID="kIK-gZ-9AS">
@@ -114,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgr-hc-mty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-168" y="-1045"/>
+            <point key="canvasLocation" x="-404" y="-1059"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="oGP-Dg-E6I">
@@ -128,9 +164,9 @@
                     </tabBar>
                     <connections>
                         <outlet property="delegate" destination="9yv-bH-QIz" id="gey-ij-48J"/>
-                        <segue destination="oSX-rB-RQI" kind="relationship" relationship="viewControllers" id="CA4-Cd-fjr"/>
-                        <segue destination="tDb-zl-cxo" kind="relationship" relationship="viewControllers" id="0Fb-tG-pAF"/>
                         <segue destination="UH4-CQ-mjl" kind="presentation" identifier="SignInWithTwitterSegue" id="fM2-rx-Z8K"/>
+                        <segue destination="LeC-jV-6oM" kind="relationship" relationship="viewControllers" id="V26-nl-PfL"/>
+                        <segue destination="tDb-zl-cxo" kind="relationship" relationship="viewControllers" id="x2K-xy-oEi"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UJL-H7-Cjo" userLabel="First Responder" sceneMemberID="firstResponder"/>
