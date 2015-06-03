@@ -16,6 +16,10 @@ class StatusesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.estimatedRowHeight = 68.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        let nib = UINib(nibName: "StatusTableViewCell", bundle: NSBundle.mainBundle())
+        self.tableView.registerNib(nib, forCellReuseIdentifier: "StatusCell")
         let request = TwitterRESTClient.getRequest(resource, parameters: nil)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
             (response: NSURLResponse!, responseData: NSData!, error: NSError!) in
@@ -25,6 +29,12 @@ class StatusesTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+        
     }
     
     // MARK: - Table view data source
@@ -38,12 +48,13 @@ class StatusesTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("StatusCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("StatusCell", forIndexPath: indexPath) as! StatusTableViewCell
         if let status = statuses[indexPath.row] as? NSDictionary {
             if let statusText = status["text"] as? String {
-            cell.textLabel?.text = statusText
+            cell.statusLabel.text = statusText
             }
         }
+        cell.layoutIfNeeded()
         return cell
     }
 

@@ -28,26 +28,10 @@
         <scene sceneID="8M5-cM-mEy">
             <objects>
                 <tableViewController id="dRC-EP-9Px" customClass="StatusesTableViewController" customModule="Gabby" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3Ay-Y7-5YZ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="1" sectionHeaderHeight="22" sectionFooterHeight="22" id="3Ay-Y7-5YZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatusCell" textLabel="mor-Z0-tlu" style="IBUITableViewCellStyleDefault" id="vwX-5k-yPD">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vwX-5k-yPD" id="3va-aP-mZl">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mor-Z0-tlu">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="dRC-EP-9Px" id="vAh-SV-43n"/>
                             <outlet property="delegate" destination="dRC-EP-9Px" id="7PJ-E5-NKu"/>
@@ -66,7 +50,7 @@
         <scene sceneID="7xZ-Od-ciP">
             <objects>
                 <navigationController id="LeC-jV-6oM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="FeV-54-6eq"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="FeV-54-6eq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ube-DX-ejT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -92,7 +76,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Me" id="Egm-wK-Pdh"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="profile" id="Egm-wK-Pdh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ty4-FH-HHk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -385,5 +369,7 @@
     </scenes>
     <resources>
         <image name="Twitter_logo_blue" width="274" height="223"/>
+        <image name="home" width="25" height="25"/>
+        <image name="profile" width="25" height="25"/>
     </resources>
 </document>
