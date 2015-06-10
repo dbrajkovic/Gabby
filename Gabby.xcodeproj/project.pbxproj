@@ -10,6 +10,7 @@
 		3724ABEF1AF1BA8900F8073C /* GabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3724ABEE1AF1BA8900F8073C /* GabTableViewCell.swift */; };
 		374991641B1FAF6B001739D8 /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374991621B1FAF6B001739D8 /* StatusTableViewCell.swift */; };
 		374991651B1FAF6B001739D8 /* StatusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 374991631B1FAF6B001739D8 /* StatusTableViewCell.xib */; };
+		374991671B1FD795001739D8 /* ComposeTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374991661B1FD795001739D8 /* ComposeTweetViewController.swift */; };
 		378677071AF1A24700A905D8 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378677061AF1A24700A905D8 /* PostsTableViewController.swift */; };
 		37A2F85B1AFAEF94005A4A77 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A2F85A1AFAEF94005A4A77 /* DataManager.swift */; };
 		37A2F85E1AFAF02E005A4A77 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A2F85C1AFAF00F005A4A77 /* CoreData.framework */; };
@@ -46,6 +47,7 @@
 		3724ABEE1AF1BA8900F8073C /* GabTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GabTableViewCell.swift; sourceTree = "<group>"; };
 		374991621B1FAF6B001739D8 /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
 		374991631B1FAF6B001739D8 /* StatusTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusTableViewCell.xib; sourceTree = "<group>"; };
+		374991661B1FD795001739D8 /* ComposeTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTweetViewController.swift; sourceTree = "<group>"; };
 		378677061AF1A24700A905D8 /* PostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 		37A2F85A1AFAEF94005A4A77 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		37A2F85C1AFAF00F005A4A77 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				37C170DB1B1BC4B300793858 /* StatusesTableViewController.swift */,
+				374991661B1FD795001739D8 /* ComposeTweetViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -136,9 +139,9 @@
 				378677061AF1A24700A905D8 /* PostsTableViewController.swift */,
 				3724ABEE1AF1BA8900F8073C /* GabTableViewCell.swift */,
 				37F21A8C1B041F8700E80812 /* GabDetailViewController.swift */,
+				374991631B1FAF6B001739D8 /* StatusTableViewCell.xib */,
 				37C34E631AE86475004C1C20 /* Main.storyboard */,
 				374991621B1FAF6B001739D8 /* StatusTableViewCell.swift */,
-				374991631B1FAF6B001739D8 /* StatusTableViewCell.xib */,
 				37C34E661AE86475004C1C20 /* Images.xcassets */,
 				37C34E681AE86475004C1C20 /* LaunchScreen.xib */,
 				37A2F85F1AFAF516005A4A77 /* GabModel.xcdatamodeld */,
@@ -289,6 +292,7 @@
 			files = (
 				37C34E621AE86475004C1C20 /* MainViewController.swift in Sources */,
 				37FF1BE81B13AA9700993FE5 /* TwitterSession.swift in Sources */,
+				374991671B1FD795001739D8 /* ComposeTweetViewController.swift in Sources */,
 				37A2F8611AFAF516005A4A77 /* GabModel.xcdatamodeld in Sources */,
 				37A2F86A1AFAFE49005A4A77 /* Gab.swift in Sources */,
 				37A2F85B1AFAEF94005A4A77 /* DataManager.swift in Sources */,

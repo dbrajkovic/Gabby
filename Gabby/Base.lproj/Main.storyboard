@@ -37,7 +37,13 @@
                             <outlet property="delegate" destination="dRC-EP-9Px" id="7PJ-E5-NKu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="guA-Jv-8Kb"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="guA-Jv-8Kb">
+                        <barButtonItem key="rightBarButtonItem" image="new-tweet" id="L2J-3r-zDr">
+                            <connections>
+                                <segue destination="Uwe-Ci-Jfx" kind="presentation" id="Ygi-yc-5Rv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="resource" value="/statuses/home_timeline"/>
                     </userDefinedRuntimeAttributes>
@@ -45,6 +51,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kha-rN-1xO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1215" y="-735"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PNk-d1-QOH">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g6C-Oj-aY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="Uwe-Ci-Jfx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fVp-PN-TPf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ifq-G1-Ipp" kind="relationship" relationship="rootViewController" id="uDY-jM-6gr"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1909" y="-735"/>
+        </scene>
+        <!--Compose Tweet View Controller-->
+        <scene sceneID="jNu-TA-GFf">
+            <objects>
+                <viewController id="Ifq-G1-Ipp" customClass="ComposeTweetViewController" customModule="Gabby" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TFE-jW-B7Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="XMD-Ji-c67"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PNu-lA-28T">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q7k-wI-9ii">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="anY-s9-54o"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3e9-U0-SH8"/>
+                                    <barButtonItem systemItem="camera" id="Yeh-5j-3gR">
+                                        <connections>
+                                            <action selector="showImagePicker:" destination="Ifq-G1-Ipp" id="zkT-b0-eTb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6Ts-EX-qt8"/>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="72K-BD-qcM">
+                                <rect key="frame" x="172" y="172" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="Kr5-fT-01x"/>
+                                    <constraint firstAttribute="height" constant="256" id="dDQ-86-apO"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="72K-BD-qcM" secondAttribute="centerY" id="6P0-Jx-gWM"/>
+                            <constraint firstAttribute="trailing" secondItem="q7k-wI-9ii" secondAttribute="trailing" id="aYm-gk-c3g"/>
+                            <constraint firstAttribute="centerX" secondItem="72K-BD-qcM" secondAttribute="centerX" id="dNi-9s-n3Z"/>
+                            <constraint firstItem="XMD-Ji-c67" firstAttribute="top" secondItem="q7k-wI-9ii" secondAttribute="bottom" id="oLc-IV-e02"/>
+                            <constraint firstItem="q7k-wI-9ii" firstAttribute="leading" secondItem="PNu-lA-28T" secondAttribute="leading" id="w0x-WR-sX0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="l1C-G5-7Qg">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Knm-MO-5tZ">
+                            <connections>
+                                <action selector="cancel:" destination="Ifq-G1-Ipp" id="eMq-ym-iWr"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Tweet" id="qxc-qB-YQe"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="72K-BD-qcM" id="bhQ-p4-UXZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vxS-Q8-5Qi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2651" y="-736"/>
         </scene>
         <!--Home-->
         <scene sceneID="7xZ-Od-ciP">
@@ -370,6 +452,7 @@
     <resources>
         <image name="Twitter_logo_blue" width="274" height="223"/>
         <image name="home" width="25" height="25"/>
+        <image name="new-tweet" width="22" height="22"/>
         <image name="profile" width="25" height="25"/>
     </resources>
 </document>

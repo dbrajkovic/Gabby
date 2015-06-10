@@ -19,7 +19,9 @@ class StatusTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.avatarView.layer.cornerRadius = 6.0
+        let layer = self.avatarView.layer
+        layer.cornerRadius = 6.0
+        self.avatarView.clipsToBounds = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
